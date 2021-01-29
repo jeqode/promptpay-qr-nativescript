@@ -1,0 +1,90 @@
+﻿/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. You can learn more about the 
+NativeScript core theme at https://github.com/nativescript/theme
+The imported CSS rules must precede all other types of rules.
+*/
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/ruby.css';
+
+/* Place any CSS rules you want to apply on both iOS and Android here.
+This is where the vast majority of your CSS code goes. */
+
+/*
+The following CSS rule changes the font size of all Buttons that have the
+'-primary' class modifier.
+*/
+Button.-primary {
+	font-size: 18;
+}
+
+Page {
+	background-color: #FBFBFB;
+}
+
+.card{
+	background-color: rgb(255, 255, 255);
+	border-radius: 30em;
+	android-elevation: 10;
+}
+
+.btn-action{
+	width: 46em;
+	height: 46em;
+	border-radius: 18em;
+	background-color: rgb(255, 255, 255);
+	android-elevation: 16;
+	vertical-align: center;
+}
+
+.actions-bar{
+	margin: 40em 0em 0em 0em;
+}
+
+.card .add-amount.set{
+	visibility: collapsed;
+}
+.card .add-amount.unset{
+	visibility: visible;
+}
+
+.card .amount{
+	font-size: 20;
+	font-weight: bold;
+}
+
+.card .amount.set{
+	visibility: visible;
+}
+.card .amount.unset{
+	visibility: collapsed;
+}
+
+.card .name{
+	font-size: 18;
+	font-weight: bold;
+	padding-top: 10;
+}
+
+.card .id{
+	font-size: 14;
+	color: rgb(104, 104, 104);
+}
+
+.bottom FlexboxLayout{
+	background-color: #fff;
+	border-radius: 18;
+	android-elevation: 10;
+	margin-bottom: 20;
+}
+
+.bottom .edit-amount{
+	font-size: 28;
+	color: rgb(65, 65, 65);
+}

@@ -1,0 +1,42 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:ns="nativescript-carousel" navigatingTo="navigatingTo" actionBarHidden="true">
+	<GridLayout rows="auto, *, 100">
+		<GridLayout row="0" columns="20, auto, 20, *, auto, 20, auto, 20" class="actions-bar" height="82">
+			<StackLayout column="1" class="btn-action">
+				<Image src="~/images/Wallet.png" height="26" />
+			</StackLayout>
+			<StackLayout column="4" class="btn-action">
+				<Image src="~/images/Download.png" height="26" />
+			</StackLayout>
+			<StackLayout column="6" class="btn-action">
+				<Image src="~/images/Send.png" height="26" />
+			</StackLayout>
+
+		</GridLayout>
+		<GridLayout row="1" class="">
+			<ns:Carousel items="{{ accounts }}" selectedPage="{{ mainAccountIndex }}" height="600" showIndicator="true" android:indicatorAnimation="worm" indicatorOffset="0, 0" indicatorColor="black" indicatorColorUnselected="lightgray">
+				<ns:Carousel.itemTemplate>
+					<ns:CarouselItem>
+						<Label row="1" text="{{ title }}" class="h1 p-20 p-b-30"/>
+						<StackLayout class="p-20 card text-center" width="280">
+							<Image  src="res://promptpay" width="160" />
+							<Image  src="{{ QR }}" width="200" height="200" />
+							<Image src="~/images/Plus.png" class="{{ amount ? 'add-amount set' : 'add-amount unset'}}" height="32" />
+							<Label text="{{ amountString }}" class="{{ amount ? 'amount set' : 'amount unset'}}" textWrap="true"/>
+							<Label text="{{ name }}" class="name" textWrap="true"/>
+							<Label text="{{ id }}" class="id" textWrap="true"/>
+						</StackLayout>
+					</ns:CarouselItem>
+				</ns:Carousel.itemTemplate>
+			</ns:Carousel>
+		</GridLayout>
+		<FlexboxLayout height="84" row="2" justifyContent="center" class="bottom">
+			<FlexboxLayout width="64" class="m-r-20" justifyContent="center">
+				<Image src="~/images/Edit Square.png" height="32" />
+			</FlexboxLayout>
+			<FlexboxLayout height="64"  width="200" justifyContent="center" alignItems="center">
+				<Image src="~/images/Category.png" height="32" />
+				<Label text="จำนวนเงิน" class="edit-amount m-l-10" textWrap="true"/>
+			</FlexboxLayout>
+		</FlexboxLayout>
+	</GridLayout>
+</Page>
